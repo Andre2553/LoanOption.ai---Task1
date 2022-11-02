@@ -1,6 +1,6 @@
 import { Provider } from "react-redux";
 import { Header } from "./components/Header";
-import { Table } from "./components/Table";
+import Table from "./components/Table";
 import "./global.css";
 import { store } from "./store";
 
