@@ -6,6 +6,7 @@ export const table: Reducer<ITableState> = (state = { rows: [] }, action) => {
         case 'ADD_UNIVERSITY_TO_TABLE':
             return state
          case 'GET_UNIVERSITIES_FROM_API':
+            console.log(action.payload.universities)
             return state;
             case 'DELETE_UNIVERSITY_FROM_TABLE': {
             }
