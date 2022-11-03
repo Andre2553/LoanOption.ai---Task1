@@ -3,8 +3,8 @@ import {Typography,TableRow,Box,Collapse,IconButton,Table,TableBody,TableCell,Ta
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Fragment, useState } from "react";
-import { IUniversity } from "../../../store/modules/table/types";
-import styles from '../styles.module.css';
+import { IUniversity } from "../../../../store/modules/table/types";
+import styles from '../../styles.module.css';
 export default function Row(props: {row: IUniversity}){
    const { row } = props;
    const [open, setOpen] = useState(false);

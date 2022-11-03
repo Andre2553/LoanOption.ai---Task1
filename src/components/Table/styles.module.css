@@ -5,6 +5,12 @@
    border-radius: 10px;
    width: 75% !important;
    margin: 20px auto 20px auto;
+
+}
+@media only screen and (max-width: 7600px) {
+   .TableContainer{
+      width: 100% !important;
+   }
 }
 .span span{
    font-size: 10px;

@@ -12,7 +12,7 @@ import AddCircle from "@mui/icons-material/AddCircle";
 import ChangeCircle from "@mui/icons-material/ChangeCircle";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import styles from "./styles.module.css";
-import AlertDialog from "./AlertDialog";
+import AlertDialog from "./components/AlertDialog";
 import { IState } from "../../store";
 import { IUniversity } from "../../store/modules/table/types";
 

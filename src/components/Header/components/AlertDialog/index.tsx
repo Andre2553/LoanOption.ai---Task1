@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import {Button,Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-import { deleteUniversity } from "../../../store/modules/table/actions";
+import { deleteUniversity } from "../../../../store/modules/table/actions";
 
 interface AlertProps{
    disabled:boolean,

@@ -7,8 +7,8 @@ import { IState } from "../../store";
 import { IUniversity } from "../../store/modules/table/types";
 
 import styles from './styles.module.css';
-import TablePaginationActions from "./TablePaginationActions";
-import Row from "./Row";
+import TablePaginationActions from "./components/TablePaginationActions";
+import Row from "./components/Row";
 
 
 export default function CollapsibleTable() {
