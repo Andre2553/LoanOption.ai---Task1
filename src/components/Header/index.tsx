@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { api } from "../../services/axios";
 import {
@@ -8,11 +8,18 @@ import {
   getUniversities,
 } from "../../store/modules/table/actions";
 import { Button } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
+import AddCircle from "@mui/icons-material/AddCircle";
+import ChangeCircle from "@mui/icons-material/ChangeCircle";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import styles from "./styles.module.css";
 import AlertDialog from "./AlertDialog";
+import { IState } from "../../store";
+import { IUniversity } from "../../store/modules/table/types";
 
 export function Header() {
+  const table = useSelector<IState, IUniversity[]>((state) => {
+    return state.table.rows;
+  });
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
 
@@ -39,6 +46,20 @@ export function Header() {
       });
   }, [dispatch]);
 
+  const theme = createTheme({
+    components: {
+      // Name of the component
+      MuiButton: {
+        styleOverrides: {
+          // Name of the slot
+          disabled: {
+            // Some CSS
+            color: "white",
+          },
+        },
+      },
+    },
+  });
   return (
     <header className={styles.header}>
       <h1>Universities in Australia</h1>
@@ -46,6 +67,7 @@ export function Header() {
         <LoadingButton
           loading={loading}
           variant="contained"
+          startIcon={<ChangeCircle />}
           color="secondary"
           onClick={() => handleGetUniversity()}
           sx={{
@@ -56,10 +78,18 @@ export function Header() {
         >
           Load
         </LoadingButton>
-        <Button variant="contained" onClick={() => handleAddUniversity()}>
-          Add
-        </Button>
-          <AlertDialog/>
+        <ThemeProvider theme={theme}>
+          <Button
+            disabled={table.length == 0}
+            startIcon={<AddCircle />}
+            variant="contained"
+            onClick={() => handleAddUniversity()}
+          >
+            Add
+          </Button>
+        </ThemeProvider>
+
+        <AlertDialog disabled={(table.length == 0)}/>
       </section>
     </header>
   );

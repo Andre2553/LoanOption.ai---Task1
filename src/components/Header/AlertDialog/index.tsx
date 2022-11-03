@@ -1,17 +1,15 @@
 import { useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
 
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+import {Button,Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import { deleteUniversity } from "../../../store/modules/table/actions";
 
-export default function AlertDialog() {
+interface AlertProps{
+   disabled:boolean,
+}
+export default function AlertDialog(props:AlertProps) {
   const dispatch = useDispatch();
   const handleDeleteUniversity = useCallback(() => {
     dispatch(deleteUniversity());
@@ -32,6 +30,7 @@ export default function AlertDialog() {
     <div>
       <Button
         onClick={handleClickOpen}
+        disabled={props.disabled}
         variant="contained"
         startIcon={<DeleteIcon />}
         color="error"
@@ -54,7 +53,7 @@ export default function AlertDialog() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={() => handleDeleteUniversity()} autoFocus>
+          <Button color='error' onClick={() => handleDeleteUniversity()} autoFocus>
             Delete
           </Button>
         </DialogActions>

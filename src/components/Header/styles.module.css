@@ -31,3 +31,7 @@ section{
    gap: 1rem;
    flex-direction: row;
 }
+button:disabled {
+   color: rgb(255 255 255 / 38%)!important;
+   background-color: rgb(255 255 255 / 16%)!important;
+}

@@ -21,7 +21,7 @@ export default function Row(props: {row: IUniversity}){
              {(row.domains.length > 1 || row.web_pages.length > 1)? open?<KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />:null}
            </IconButton>
          </TableCell>
-         <TableCell  component="th" scope="row">
+         <TableCell style={{fontWeight: 'bold'}}  component="th" scope="row">
            {row.name}
          </TableCell>
          <TableCell align="left">{row.country}</TableCell>

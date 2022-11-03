@@ -36,7 +36,7 @@ export default function CollapsibleTable() {
         <TableHead>
           <TableRow>
             <TableCell style={{ width: '5%' }}/>
-            <TableCell style={{ width: '30%' }}>Name</TableCell>
+            <TableCell style={{ width: '30%',fontWeight: 'bold'}}>Name</TableCell>
             <TableCell style={{ width: '10%' }} align="left">Country</TableCell>
             <TableCell style={{ width: '10%' }} align="left">State Province</TableCell>
             <TableCell style={{ width: '25%' }} align="left">Web Pages</TableCell>

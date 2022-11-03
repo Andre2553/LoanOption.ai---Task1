@@ -5,9 +5,13 @@ import produce from "immer";
 export const table: Reducer<ITableState> = (state = { rows: [] }, action) => {
     return produce(state, draft => {
         switch (action.type) {
-            case 'ADD_UNIVERSITY_TO_TABLE':{
+            case 'ADD_UNIVERSITY_TO_TABLE': {
                 console.log(state);
-                draft.rows.push(draft.rows[0]);
+                if (state.rows.length !== 0) {
+                    draft.rows.push(draft.rows[0]);
+                } else {
+                    draft.rows = [];
+                }
                 break;
             }
             case 'GET_UNIVERSITIES_FROM_API':
@@ -16,7 +20,11 @@ export const table: Reducer<ITableState> = (state = { rows: [] }, action) => {
                 break;
             case 'DELETE_UNIVERSITY_FROM_TABLE': {
                 console.log(state);
-                draft.rows.pop();
+                if (state.rows.length !== 0) {
+                    draft.rows.pop();
+                } else {
+                    draft.rows = [];
+                }
                 break;
             }
             default:
