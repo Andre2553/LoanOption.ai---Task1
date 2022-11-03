@@ -8,7 +8,7 @@ In this project, I have created a ReactJs application that gets data from an API
 
 ## How to run it?
 
-### ReactJs
+### LocalHost
 
 <details><summary><b>Show instructions</b></summary>
 
@@ -36,17 +36,29 @@ You can access the project website via this link <a href="https://loan-option-ai
 Unfortunately, the api used for the task uses http protocol, so it is unsafe.
 ##
 
-For you to be able to use the application, you need to change the privacy and security > Insecure content = Allow
+To use the application, you need to allow  Insecure content.
 
 <details><summary><b>Show instructions</b></summary>
 
-1. Go to the website's information section by clicking on the lock icon > site settings
+1. Go to the website's information section by clicking on the lock icon and clicking on the site settings button
 
 2. Scroll down to the "insecure content" and choose "allow" from the dropdown
 
 3. Refresh your page and you're good to go
 
 </details>
+
+##
+
+### Built With
+
+
+* Vite
+* React.js
+* Typescript
+* CSS modules
+* MUI - Materail UI
+* Redux
 
 ##
 
